@@ -1,0 +1,27 @@
+Dans le dossier Data/ :
+
+Les donn�es d'une observation sont enregistr�es dans un dossier du
+type 2017-MM-DD/. Dedans on a n�cessairement un dossier darks/ et flats/ et les
+objets observ�s sont dans des dossiers du type M13/.
+
+- Pour les fichiers du dossiers darks/ : les fichiers d'observation prennent la
+forme Dark-[TDP]_[Num�ro de prise].fits avec TDP le temps de pose en seconde et
+avec une d�cimale (0.5 ou 5.0, etc). Les fichiers correspondant � la m�diane des
+darks par temps de pose prennent la forme mdark-[TDP].fits.
+
+- Pour les fichiers du dossier flats/ : les fichiers d'observation prennent la
+forme Flat-[Filtre]_[Num�ro de prise].fits, le fichier comprenant les donn�es de
+transmission
+(T = (<flat (t)> - <dark (t)>)/(1/nbPix * int_{pix}(<flat (t)> - <dark (t)>)) )
+prennent la forme mtrans-[Filtre].fits
+
+- Pour les fichiers d'objets (dossier du type M13/) : les fichiers d'observation
+prennent la forme [OBJET]-[Filtre]-[Num�ro de s�rie]_[Num�ro de prise].fits.
+Chacun des fichiers d'observation aura sa version trait�e de la forme
+(obj - <dark (t)>) / T, ils seront enregistr�s sous des fichiers de la forme
+[OBJET]-[Filtre]-[Num�ro de s�rie]_[Num�ro de prise].aux.fits. Chacun de ces
+fichiers aura une version translat�e sous la forme
+[OBJET]-[Filtre]-[Num�ro de s�rie]_[Num�ro de prise]_t.aux.fits.
+La version moyenn�e de ces fichiers translat�s sera sous la forme
+[OBJET]-[Filtre]-[Num�ro de s�rie].fits. La version translat�e (entre s�rie) de
+ces fichiers sera sous la forme [OBJET]-[Filtre]-[Num�ro de s�rie]_t.fits
